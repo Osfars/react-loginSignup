@@ -29,8 +29,13 @@ export const LoginSignup = () => {
                 <img src={password_icon} alt="" />
                 <input type="password" placeholder='password'/>
             </div>
+            {action === "Login" ? <div></div> : <div className="input">
+                <img src={password_icon} alt="" />
+                <input type="password" placeholder='confirm password'/>
+            </div>}
         </div>
-        <div className="forgot-password">Lost Password? <span>Click here</span></div>
+        {action === "Sign Up" ? <div></div> : <div className="forgot-password">Lost Password? <span>Click here</span></div>}
+        
         <div className="submit-container">
             <div className={action === "Login" ? "submit gray":"submit"} onClick={() =>{setAction("Sign Up")}}>Sign Up</div>
             <div className={action === "Sign Up" ? "submit gray":"submit"} onClick={() =>{setAction("Login")}}>Login</div>
